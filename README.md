@@ -1,6 +1,7 @@
 # convolutional-extractor
-- Convolutional SVM
-- Convolutional Clustering
+- -Convolutional SVM
+- -Convolutional Clustering
+
 ## Convolutional SVM
 This project use the convolutional neural networks method to extract the photo features which are the input for svm slassifying.
 - Using ConvNets to extract features for SVM classifying
