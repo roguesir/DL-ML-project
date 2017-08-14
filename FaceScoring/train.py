@@ -1,11 +1,3 @@
-'''
-A Convolutional Network implementation example using TensorFlow library.
-This example is using the MNIST database of handwritten digits
-(http://yann.lecun.com/exdb/mnist/)
-
-Author: Aymeric Damien
-Project: https://github.com/aymericdamien/TensorFlow-Examples/
-'''
 
 from __future__ import print_function
 import os
@@ -15,18 +7,13 @@ from PIL import Image
 import numpy
 import tensorflow as tf
 
-# Import MNIST data
-from tensorflow.examples.tutorials.mnist import input_data
-
 
 # Network Parameters
-n_input = 128*128 # MNIST data input (img shape: 128*128 )
-n_classes = 10 # MNIST total classes (0-9 digits)
 dropout = 0.75 # Dropout, probability to keep units
 
 # tf Graph input
 x = tf.placeholder(tf.float32, [None, 128, 128, 3])
-y = tf.placeholder(tf.float32, [None, n_classes])
+y = tf.placeholder(tf.float32, [None, 10])
 keep_prob = tf.placeholder(tf.float32) #dropout (keep probability)
 
 
@@ -82,14 +69,14 @@ weights = {
     # fully connected, 32*32*96 inputs, 1024 outputs
     'wd1': tf.Variable(tf.random_normal([32*32*96, 1024])),
     # 1024 inputs, 10 outputs (class prediction)
-    'out': tf.Variable(tf.random_normal([1024, n_classes]))
+    'out': tf.Variable(tf.random_normal([1024, 10]))
 }
 
 biases = {
     'bc1': tf.Variable(tf.random_normal([24])),
     'bc2': tf.Variable(tf.random_normal([96])),
     'bd1': tf.Variable(tf.random_normal([1024])),
-    'out': tf.Variable(tf.random_normal([n_classes]))
+    'out': tf.Variable(tf.random_normal([10]))
 }
 
 # Construct model
@@ -155,49 +142,5 @@ with tf.Session() as sess:
             print("count = " + str(count) + ", Minibatch Loss= " + str(loss) + ", Training Accuracy= " + str(acc) )
     print("Optimization Finished!")
     saver.save(sess,"./model/model.ckpt")
-    '''
-    while count<30:
-        count = count+1
-        print("count:",count)
-        for batch_id in range(0, 25):
-            batch = list[batch_id * 20:batch_id * 20 + 20]
-            batch_xs = []
-            batch_ys = []
-            for image in batch:
-                id_tag = image.find("-")
-                score = image[0:id_tag]
-                # print(score)
-                img = Image.open("./resize_image/" + image)
-                img_ndarray = numpy.asarray(img, dtype='float32')
-                img_ndarray = numpy.reshape(img_ndarray, [128, 128, 3])
-                # print(img_ndarray.shape)
-                batch_x = img_ndarray
-                batch_xs.append(batch_x)
-                # print(batch_xs)
-                batch_y = numpy.asarray([0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
-                # print(type(score))
-                batch_y[int(score) - 1] = 1
-                # print(batch_y)
-                batch_y = numpy.reshape(batch_y, [10, ])
-                batch_ys.append(batch_y)
-            # print(batch_ys)
-            batch_xs = numpy.asarray(batch_xs)
-            #print(batch_xs.shape)
-            batch_ys = numpy.asarray(batch_ys)
-            #print(batch_ys.shape)
 
-            sess.run(optimizer, feed_dict={x: batch_xs, y: batch_ys,
-                                           keep_prob: dropout})
-            if step % display_step == 0:
-                # Calculate batch loss and accuracy
-                loss, acc = sess.run([cost, accuracy], feed_dict={x: batch_xs,
-                                                                  y: batch_ys,
-                                                                  keep_prob: 1.})
-                print("Iter " + str(step*batch_size) + ", Minibatch Loss= " + \
-                    "{:.6f}".format(loss) + ", Training Accuracy= " + \
-                    "{:.5f}".format(acc))
-            step += 1
-    print("Optimization Finished!")
-    saver.save(sess,"./model/model.ckpt")
-    '''
 
