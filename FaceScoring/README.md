@@ -3,15 +3,15 @@
 
 ## Dataset
 * Doownload: http://www.hcii-lab.net/data/SCUT-FBP/EN/download.html
-![Result Pic](https://github.com/roguesir/DL-project/blob/master/FaceScoring/web_image.jpg)
+* ![Result Pic](https://github.com/roguesir/DL-project/blob/master/FaceScoring/web_image.jpg)
 * After downloading, we need match the labels and images.
-![Result Pic](https://github.com/roguesir/DL-project/blob/master/FaceScoring/face_image.jpg)
+* ![Result Pic](https://github.com/roguesir/DL-project/blob/master/FaceScoring/face_image.jpg)
 
 ## Run
 There are three train scripts about the train model. 
-'python3 train.py
-'python3 train_alex.py
-'python3 train_vgg.py
+* python3 train.py
+* python3 train_alex.py
+* python3 train_vgg.py
 
 ## Test
 ![Result Pic](https://github.com/roguesir/DL-project/blob/master/FaceScoring/test_image.jpg)
