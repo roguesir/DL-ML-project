@@ -1,0 +1,1 @@
+### The original image set in this folder.
