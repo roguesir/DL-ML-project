@@ -20,7 +20,7 @@ There are three train scripts about the train model.
 
 ## Test
 
-![Result Pic](https://github.com/roguesir/DL-project/blob/master/FaceScoring/test_image.jpg)
+![Result Pic](https://github.com/roguesir/DL-project/blob/master/Face-Scoring/test_image.jpg)
 
 ## Model Downloading
 
