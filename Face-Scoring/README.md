@@ -31,3 +31,13 @@ I train three models with different architectures: one is with three convolution
 First model: http://pan.baidu.com/s/1bp8gqfH
 
 AlexNet model: http://pan.baidu.com/s/1mhM0Jkk
+
+### Note
+
+Environment:
+
+- python 3.5
+
+- tensorflow-1.2.1
+
+- ubuntu
