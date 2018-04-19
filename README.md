@@ -1,4 +1,4 @@
-# DL-project
+# DL-ML-project
 Deep Learning && Machine Learning project.
 
 ## Content
