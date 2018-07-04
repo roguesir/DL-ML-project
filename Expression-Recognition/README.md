@@ -1,8 +1,19 @@
 ### Expression-Recognition
 
-This program is based on deep CNN to recognize facial expression, including 7 types.
+This project is based on deep CNN to recognize facial expression, including 7 types.
 
-The project has been completed, but because of the paper, I'm not push the train code and the model now, please don't worry.
+### Requirment
+python3.6
+
+tensorflow1.2
+
+### Usage
+``` python 
+python3 train-basic.py
+python3 train-8.py
+python3 train-13.py
+python3 train-13-conv.py
+```
 
 Setting 4 CNNs, draw the loss and accuracy as follow:
 
@@ -14,4 +25,6 @@ Setting 4 CNNs, draw the loss and accuracy as follow:
 
 ![loss](https://github.com/roguesir/DL-ML-project/blob/master/Expression-Recognition/loss.png)
 
+#### Note
+Maybe after tensorflow updating, some functions have changed, please adjust it.
 
